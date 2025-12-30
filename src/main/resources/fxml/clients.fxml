@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erp_.controller.ClientesController">
+    <top>
+        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="page-header" style="-fx-padding:10;">
+            <VBox>
+                <Label text="Clientes" styleClass="page-title" />
+                <Label text="Gerencie os clientes cadastrados" styleClass="page-subtitle" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Novo Cliente" onAction="#onNovo" styleClass="primary-button" />
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="8" styleClass="clients-sidebar" style="-fx-padding:10;">
+            <Label text="Filtros" styleClass="subtitle" />
+            <TextField fx:id="txtBusca" promptText="Nome ou CPF/CNPJ" />
+            <ChoiceBox fx:id="chActive" prefWidth="160">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Todos" />
+                        <String fx:value="Ativos" />
+                        <String fx:value="Inativos" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <Button text="Aplicar" onAction="#onPesquisar" />
+            <Button text="Gerar Exemplos" onAction="#onGerarExemplos" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Button text="Exportar CSV" onAction="#onExportCsv" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding:12;">
+            <HBox spacing="14">
+                <Label text="Total de clientes:" styleClass="label" />
+                <Label fx:id="lblTotal" text="0" styleClass="label strong" />
+            </HBox>
+            <TableView fx:id="tabelaClientes" prefHeight="520" styleClass="alt-table">
+                <columns>
+                    <TableColumn text="ID" fx:id="colId" prefWidth="60" />
+                    <TableColumn text="Nome" fx:id="colName" prefWidth="220" />
+                    <TableColumn text="CPF/CNPJ" fx:id="colCpf" prefWidth="140" />
+                    <TableColumn text="Email" fx:id="colEmail" prefWidth="220" />
+                    <TableColumn text="Telefone" fx:id="colPhone" prefWidth="140" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

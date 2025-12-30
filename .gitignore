@@ -1,0 +1,81 @@
+ # .gitignore gerado pelo assistente — padrões comuns para Java/Maven/IDE (PT-BR)
+
+# Build output
+/target/
+/bin/
+/out/
+
+# Maven wrapper
+/.mvn/
+
+# IntelliJ
+/.idea/
+*.iml
+
+# Eclipse
+/.classpath
+/.project
+/.settings/
+
+# NetBeans
+/nbproject/private/
+
+# VS Code
+.vscode/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*~
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Generated files
+/generated/
+
+# Dependency directories
+/node_modules/
+/.gradle/
+
+# Databases and SQLite
+*.db
+*.sqlite
+*.db-shm
+*.db-wal
+
+# Python (if any)
+__pycache__/
+*.py[cod]
+
+# IDE/workspace
+*.iml
+.idea/
+
+# Environment files
+.env
+.env.local
+
+# Temporary export files
+data/exports/
+
+# Misc
+*.zip
+*.tar.gz
+
+# Prevent committing local secrets or credentials
+secrets.*
+credentials.*
+
+# End of .gitignore
+

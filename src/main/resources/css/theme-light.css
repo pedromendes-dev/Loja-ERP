@@ -1,0 +1,12 @@
+/* Light theme overrides */
+.root {
+    -fx-base: #ffffff;
+    -fx-control-inner-background: #ffffff;
+    -fx-text-background-color: #222222;
+}
+
+.label { -fx-text-fill: #222222; }
+.button { -fx-background-color: linear-gradient(#f0f4ff, #dfeaff); -fx-text-fill: #0b3a66; }
+
+.table-view { -fx-background-color: #ffffff; }
+

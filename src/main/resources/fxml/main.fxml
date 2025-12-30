@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erp_.controller.ControladorPrincipal">
+    <!-- Top header moderno -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="app-header" style="-fx-padding:10;">
+            <Label text="Loja" styleClass="app-header-title" />
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <TextField fx:id="txtHeaderSearch" promptText="Buscar..." />
+                <Button text="Ir" />
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- Sidebar lateral redesenhada -->
+    <left>
+        <VBox spacing="12" styleClass="app-sidebar" alignment="TOP_CENTER" style="-fx-padding:12;">
+            <Label text="Loja" styleClass="sidebar-title" />
+            <VBox spacing="6" styleClass="sidebar-buttons" alignment="TOP_LEFT">
+                <Button text="🏠  Painel" onAction="#abrirPainel" styleClass="sidebar-button" />
+                <Button text="👥  Clientes" onAction="#abrirClientes" styleClass="sidebar-button" />
+                <Button text="📦  Produtos" onAction="#abrirProdutos" styleClass="sidebar-button" />
+                <Button text="🧾  Vendas" onAction="#abrirVendas" styleClass="sidebar-button" />
+                <Button text="📊  Relatórios" onAction="#abrirRelatorios" styleClass="sidebar-button" />
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+            <Button text="⇩ Exportar Relatórios" onAction="#gerarRelatoriosAction" styleClass="sidebar-button primary-button" />
+            <Button text="⎋  Sair" onAction="#sair" styleClass="sidebar-button" />
+        </VBox>
+    </left>
+
+    <!-- Conteúdo central com padding e aparência de cartão -->
+    <center>
+        <StackPane fx:id="painelConteudo" styleClass="content-area" style="-fx-padding:18;">
+            <!-- conteúdo dinâmico será carregado aqui -->
+        </StackPane>
+    </center>
+</BorderPane>

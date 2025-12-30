@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erp.controller.PainelDashboardController" spacing="12" alignment="TOP_LEFT" style="-fx-padding:18;">
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Painel" styleClass="title" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="Atualizar" onAction="#onRefreshDashboard" />
+    </HBox>
+
+    <!-- Metric cards -->
+    <HBox spacing="14">
+        <VBox spacing="6" style="-fx-background-color: #ffffff; -fx-padding:12; -fx-border-radius:6; -fx-background-radius:6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6,0,0,1);">
+            <Label text="Clientes" styleClass="card-title" />
+            <Label fx:id="lblQuantidadeClientes" text="0" styleClass="card-value" />
+            <Button text="Ver clientes" onAction="#onOpenClients" />
+        </VBox>
+
+        <VBox spacing="6" style="-fx-background-color: #ffffff; -fx-padding:12; -fx-border-radius:6; -fx-background-radius:6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6,0,0,1);">
+            <Label text="Produtos" styleClass="card-title" />
+            <Label fx:id="lblQuantidadeProdutos" text="0" styleClass="card-value" />
+            <Button text="Ver produtos" onAction="#onOpenProducts" />
+        </VBox>
+
+        <VBox spacing="6" style="-fx-background-color: #ffffff; -fx-padding:12; -fx-border-radius:6; -fx-background-radius:6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6,0,0,1);">
+            <Label text="Vendas" styleClass="card-title" />
+            <Label fx:id="lblQuantidadeVendas" text="0" styleClass="card-value" />
+            <Button text="Ver vendas" onAction="#onOpenSales" />
+        </VBox>
+    </HBox>
+
+    <!-- Quick actions -->
+    <HBox spacing="8" style="-fx-padding:6;">
+        <Button text="Novo Cliente" onAction="#onNovoClienteQuick" />
+        <Button text="Novo Produto" onAction="#onNovoProdutoQuick" />
+        <Button text="Nova Venda" onAction="#onNovaVendaQuick" />
+    </HBox>
+
+    <!-- Recent activity placeholder -->
+    <VBox spacing="6">
+        <Label text="Atividade recente" styleClass="subtitle" />
+        <ListView fx:id="lstAtividades" prefHeight="160" />
+    </VBox>
+</VBox>

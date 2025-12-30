@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erp.controller.VendasController" style="-fx-padding:12;">
+    <top>
+        <VBox spacing="6">
+            <Label text="Vendas" styleClass="title" />
+            <HBox spacing="6">
+                <TextField fx:id="txtBuscaProduto" HBox.hgrow="ALWAYS" promptText="Buscar produto por nome ou código" />
+                <Button text="Buscar" onAction="#onBuscarProduto" />
+                <Label text="Qtde:" />
+                <Spinner fx:id="spinnerQuantidade" prefWidth="80" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <SplitPane orientation="HORIZONTAL">
+            <VBox spacing="6">
+                <Label text="Resultados" />
+                <TableView fx:id="tabelaResultados" prefWidth="400">
+                    <columns>
+                        <TableColumn text="ID" fx:id="colResId" />
+                        <TableColumn text="Nome" fx:id="colResNome" />
+                        <TableColumn text="Qtde" fx:id="colResQtde" />
+                        <TableColumn text="Preço" fx:id="colResPreco" />
+                        <TableColumn text="Estoque" fx:id="colResEstoque" />
+                    </columns>
+                </TableView>
+                <Button fx:id="btnAdicionar" text="Adicionar ao carrinho" onAction="#onAdicionarCarrinho" />
+            </VBox>
+            <VBox spacing="6">
+                <Label text="Carrinho" />
+                <TableView fx:id="tabelaCarrinho" prefWidth="300">
+                    <columns>
+                        <TableColumn text="Produto" fx:id="colCarProduto" />
+                        <TableColumn text="Qtde" fx:id="colCarQtde" />
+                        <TableColumn text="Preço unit." fx:id="colCarPreco" />
+                        <TableColumn text="Subtotal" fx:id="colCarSubtotal" />
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Label text="Total:" />
+                    <Label fx:id="lblTotal" text="R$ 0,00" />
+                </HBox>
+                <HBox spacing="6">
+                    <Button text="Remover item" onAction="#onRemoverItem" />
+                    <Button text="Finalizar Venda" onAction="#onFinalizarVenda" />
+                </HBox>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

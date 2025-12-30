@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" spacing="10" alignment="CENTER" fx:controller="com.example.erp.controller.ControladorLogin">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+    <Label text="Loja — Login" styleClass="title" />
+    <StackPane fx:id="loginCard" styleClass="login-card">
+        <VBox spacing="8" alignment="CENTER">
+            <GridPane hgap="10" vgap="10" styleClass="login-grid">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="35" />
+                    <ColumnConstraints percentWidth="65" />
+                </columnConstraints>
+                <Label text="Usuário:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="txtUsuario" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="260" />
+                <Label text="Senha:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <PasswordField fx:id="txtSenha" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="260" />
+            </GridPane>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Entrar" fx:id="btnEntrar" onAction="#onEntrar" styleClass="primary-button" prefWidth="140" />
+            </HBox>
+        </VBox>
+    </StackPane>
+    <Label fx:id="lblMensagem" textFill="red" />
+</VBox>

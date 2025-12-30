@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erp.controller.ProdutosController">
+    <top>
+        <ToolBar>
+            <Button text="Novo" onAction="#onNovo" />
+            <Button text="Editar" onAction="#onEditar" />
+            <Button text="Excluir" onAction="#onExcluir" />
+            <Button text="Ajustar Estoque" onAction="#onAjustarEstoque" />
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="txtBusca" promptText="Buscar por nome" />
+            <Button text="Pesquisar" onAction="#onPesquisar" />
+        </ToolBar>
+    </top>
+    <center>
+        <TableView fx:id="tabelaProdutos">
+            <columns>
+                <TableColumn text="ID" fx:id="colId" />
+                <TableColumn text="Código" fx:id="colSku" />
+                <TableColumn text="Nome" fx:id="colName" />
+                <TableColumn text="Preço" fx:id="colPrice" />
+                <TableColumn text="Qtd" fx:id="colQty" />
+                <TableColumn text="Min" fx:id="colMin" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
